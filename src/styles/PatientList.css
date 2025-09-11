@@ -1,0 +1,255 @@
+body {
+  background-color: #f0f2f5;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.user-management-container {
+  max-width: 900px; /* Adjusted max-width for the table layout */
+  width: 90%;
+  margin: 0 auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+.table-heading {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 25px;
+  text-align: left; /* Align heading to the left */
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checkbox-icon {
+  font-size: 1.2em;
+  color: #a0a0a0; /* Grey color for unchecked checkbox */
+  cursor: pointer;
+}
+
+.search-input-wrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0px; /* Remove top margin */
+  border-radius: 10px; /* Apply border-radius to the table itself */
+  overflow: hidden; /* Ensures border-radius is visible */
+}
+
+.patient-table th, .patient-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef; /* Light border for rows */
+}
+
+.patient-table thead {
+  background-color: #343a40; /* Darker header background */
+  color: white;
+}
+
+.patient-table th {
+  font-weight: 600;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.patient-table tbody tr:last-child td {
+  border-bottom: none; /* No border for the last row */
+}
+
+.patient-table tbody tr:hover {
+  background-color: #f8f9fa; /* Subtle hover effect for rows */
+}
+
+.th-checkbox, .td-checkbox {
+  width: 40px; /* Fixed width for checkbox column */
+  text-align: center;
+}
+
+.header-checkbox-icon, .row-checkbox-icon {
+  font-size: 1em;
+  color: #ffffff; /* White for header, grey for row */
+  cursor: pointer;
+}
+
+.row-checkbox-icon {
+  color: #a0a0a0;
+}
+
+.th-actions {
+  text-align: center; /* Center actions column header */
+  width: 150px; /* Fixed width for actions column */
+}
+
+.table-actions {
+  display: flex;
+  justify-content: center; /* Center the action buttons in the cell */
+  gap: 8px;
+}
+
+.action-button {
+  width: 30px; /* Fixed width for square buttons */
+  height: 30px; /* Fixed height for square buttons */
+  border: 1px solid transparent; /* Small border */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  color: white; /* White icon color */
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.action-button .fa-square { /* Styling for the Font Awesome square icon */
+  font-size: 0.9em; /* Adjust icon size within the button */
+}
+
+.blue-button {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.blue-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.green-button {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.green-button:hover {
+  background-color: #218838;
+  border-color: #218838;
+  transform: translateY(-1px);
+}
+
+.red-button {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.red-button:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.no-patients-found {
+  text-align: center;
+  padding: 20px;
+  color: #6a737d;
+}
+
+.syncing-status {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #6a737d;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .user-management-container {
+    width: 95%;
+    padding: 20px;
+  }
+  .table-heading {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+  .patient-table th, .patient-table td {
+    padding: 12px;
+    font-size: 0.9em;
+  }
+  .th-actions {
+    width: 120px;
+  }
+  .action-button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8em;
+  }
+  .action-button .fa-square {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-management-container {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+  }
+  .table-heading {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  .patient-table {
+    display: block; /* Make table scrollable on small screens */
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  .patient-table th, .patient-table td {
+    padding: 10px;
+  }
+  .th-checkbox, .td-checkbox {
+    width: 30px;
+  }
+  .th-actions {
+    width: 100px;
+  }
+  .action-button {
+    width: 25px;
+    height: 25px;
+    font-size: 0.7em;
+  }
+  .action-button .fa-square {
+    font-size: 0.7em;
+  }
+}
